@@ -3,6 +3,9 @@ kind: Pod
 metadata:
   name: counter
 spec:
+  selector:
+    matchLabels:
+      app: counter
   containers:
   - name: count
     image: busybox

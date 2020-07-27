@@ -8,6 +8,7 @@ metadata:
 spec:
   selector:
     matchLabels:
+      app: kibana
       k8s-app: kibana
   template:
     metadata:
