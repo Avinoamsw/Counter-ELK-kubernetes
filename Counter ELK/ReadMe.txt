@@ -1,0 +1,1 @@
+Run Counter_ELK.ps1 in order to create minikube node cluster with ELK, filebeat & 5 mins counter

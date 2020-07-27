@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: counter
+spec:
+  containers:
+  - name: count
+    image: busybox
+    args:
+    - /bin/sh
+    - -c
+    - >
+      i=0;
+      while true;
+      do
+        echo "$i: $(date)" >> /logdata/log/5m_Times.log;
+        i=$((i+1));
+        sleep 300;
+      done
+    volumeMounts:
+    - name: logdata
+      mountPath: /logdata/log
+  volumes:
+  - name: logdata
+    hostPath:
+      # directory location on host
+      path: /logdata/log
+      # this field is optional
+      type: DirectoryOrCreate
