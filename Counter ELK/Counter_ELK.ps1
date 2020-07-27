@@ -2,7 +2,7 @@
 Start-Sleep -Seconds 5
 kubectl apply -f .\Helm-RBAC_ServiceAccount.yml
 kubectl apply -f .\Counter_Pod.yml
-kubectl wait --timeout=600s --for=condition=ready pod -l app=counter
+kubectl wait --timeout=600s --for=condition=ready pod/counter
 kubectl apply -f .\ElasticSearch_Service.yml
 kubectl apply -f .\ElasticSearch_PV.yml
 kubectl apply -f .\ElasticSearch_Deploy.yml

@@ -12,6 +12,7 @@ spec:
   template:
     metadata:
       labels:
+        app: filebeat
         k8s-app: filebeat
     spec:
       # Refers to our previously defined ServiceAccount.
